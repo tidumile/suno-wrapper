@@ -8,12 +8,10 @@ let browser;
 let page;
 
 async function initBrowser() {
-  browser = await chromium.launch({ headless: true });
-  const context = await browser.newContext();
-  page = await context.newPage();
-
-  await page.goto("https://suno.com");
-  console.log("👉 Uloguj se u Suno u browseru koji se otvori");
+ await page.goto("https://suno.com/login", { waitUntil: "networkidle" });
+await page.fill('input[type="email"]', process.env.SUNO_EMAIL);
+...
+console.log("✅ Ulogovan na Suno");
 }
 
 app.post("/generate", async (req, res) => {
