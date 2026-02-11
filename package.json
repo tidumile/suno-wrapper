@@ -1,0 +1,8 @@
+{
+  "name": "suno-wrapper",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.18.2",
+    "playwright": "^1.42.0"
+  }
+}
