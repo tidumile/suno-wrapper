@@ -29,7 +29,9 @@ app.post("/generate", async (req, res) => {
   res.json({ status: "ok" });
 });
 
-app.listen(3000, async () => {
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, async () => {
   await initBrowser();
-  console.log("🚀 Wrapper running on port 3000");
+  console.log(`🚀 Wrapper running on port ${PORT}`);
 });
