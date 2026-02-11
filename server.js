@@ -24,7 +24,7 @@ app.post("/generate", async (req, res) => {
 
   await page.goto("https://suno.com/create");
   await page.fill("textarea", prompt);
-  await page.click("button:has-text('Generate')");
+  await page.click("button:has-text('Create')");
 
   res.json({ status: "ok" });
 });
